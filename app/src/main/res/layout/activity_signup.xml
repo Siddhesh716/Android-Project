@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignupActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="10dp"
+        app:cardBackgroundColor="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <EditText
+                android:id="@+id/nameField"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Name"
+                android:textColorHint="@android:color/black"
+                android:textColor="@color/black"
+                android:background="@drawable/input_background"
+                android:padding="12dp"
+                android:textSize="18sp"
+                android:layout_marginBottom="10dp"/>
+
+            <EditText
+                android:id="@+id/mobileField"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Mobile Number"
+                android:inputType="phone"
+                android:textColorHint="@android:color/black"
+                android:textColor="@color/black"
+                android:background="@drawable/input_background"
+                android:padding="12dp"
+                android:textSize="18sp"
+                android:layout_marginBottom="10dp"/>
+
+            <EditText
+                android:id="@+id/ageField"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Age"
+                android:textColorHint="@android:color/black"
+                android:textColor="@color/black"
+                android:inputType="number"
+                android:background="@drawable/input_background"
+                android:padding="12dp"
+                android:textSize="18sp"
+                android:layout_marginBottom="10dp"/>
+
+            <EditText
+                android:id="@+id/emailField"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Email ID"
+                android:textColorHint="@android:color/black"
+                android:textColor="@color/black"
+                android:inputType="textEmailAddress"
+                android:background="@drawable/input_background"
+                android:padding="12dp"
+                android:textSize="18sp"
+                android:layout_marginBottom="10dp"/>
+
+            <EditText
+                android:id="@+id/weightField"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Weight (kg)"
+                android:textColorHint="@android:color/black"
+                android:textColor="@color/black"
+                android:inputType="numberDecimal"
+                android:background="@drawable/input_background"
+                android:padding="12dp"
+                android:textSize="18sp"
+                android:layout_marginBottom="20dp"/>
+
+            <Button
+                android:id="@+id/submitButton"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="SignUp"
+                android:textSize="20sp"
+                android:background="@drawable/button_background"
+                android:textColor="@android:color/white"
+                android:elevation="5dp"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

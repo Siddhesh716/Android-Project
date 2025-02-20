@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_profile"
+        android:title="Profile"
+        android:icon="@drawable/ic_profile"/>
+    <item
+        android:id="@+id/nav_exercises"
+        android:title="Exercises"
+        android:icon="@drawable/ic_exercises"/>
+    <item
+        android:id="@+id/nav_goals"
+        android:title="Goals"
+        android:icon="@drawable/ic_goals"/>
+    <item
+        android:id="@+id/nav_diet_plans"
+        android:title="Diet Plans"
+        android:icon="@drawable/ic_diet"/>
+    <item
+        android:id="@+id/nav_quick_workout"
+        android:title="Quick Workout"
+        android:icon="@drawable/ic_workout"/>
+    <item
+        android:id="@+id/nav_quiz"
+        android:title="Quick Quiz"
+        android:icon="@drawable/ic_quiz"/>
+    <item
+        android:id="@+id/nav_bmi"
+        android:title="BMI Calculator"
+        android:icon="@drawable/ic_bmi"/>
+</menu>
