@@ -53,14 +53,25 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
+<!--        <com.example.basic.PieChartView-->
+<!--            android:id="@+id/circleView"-->
+<!--            android:layout_width="350dp"-->
+<!--            android:layout_height="350dp"-->
+<!--            android:layout_marginTop="20dp"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/quoteText"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"/>-->
+
         <com.example.basic.PieChartView
             android:id="@+id/circleView"
-            android:layout_width="350dp"
-            android:layout_height="350dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             android:layout_marginTop="20dp"
             app:layout_constraintTop_toBottomOf="@id/quoteText"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintWidth_percent="0.8"/>
 
         <TextView
             android:id="@+id/pieChartDescription"
