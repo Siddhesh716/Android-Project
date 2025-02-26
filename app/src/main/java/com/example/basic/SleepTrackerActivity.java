@@ -26,14 +26,11 @@ public class SleepTrackerActivity extends AppCompatActivity implements SensorEve
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sleep_tracker);
-
         sleepText = findViewById(R.id.sleepText);
 
-        // Register screen on/off receiver
         registerReceiver(screenReceiver, new IntentFilter(Intent.ACTION_SCREEN_OFF));
         registerReceiver(screenReceiver, new IntentFilter(Intent.ACTION_SCREEN_ON));
 
-        // Setup accelerometer
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         if (sensorManager != null) {
             accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
@@ -49,7 +46,6 @@ public class SleepTrackerActivity extends AppCompatActivity implements SensorEve
 
         float movement = Math.abs(x - lastX) + Math.abs(y - lastY) + Math.abs(z - lastZ);
 
-        // Detect when the phone is still
         if (movement < 0.5) {
             if (!isSleeping) {
                 isSleeping = true;
@@ -72,7 +68,6 @@ public class SleepTrackerActivity extends AppCompatActivity implements SensorEve
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {}
 
-    // Screen On/Off Receiver
     private final BroadcastReceiver screenReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -90,7 +85,6 @@ public class SleepTrackerActivity extends AppCompatActivity implements SensorEve
         }
     };
 
-    // Runnable to update sleep duration in real time
     private final Runnable updateSleepDuration = new Runnable() {
         @Override
         public void run() {
@@ -102,7 +96,6 @@ public class SleepTrackerActivity extends AppCompatActivity implements SensorEve
         }
     };
 
-    // Method to format time in HH:MM:SS
     private String formatTime(long seconds) {
         long hours = seconds / 3600;
         long minutes = (seconds % 3600) / 60;

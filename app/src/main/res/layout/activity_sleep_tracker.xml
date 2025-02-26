@@ -8,18 +8,16 @@
     android:padding="20dp"
     android:background="@drawable/gradient_background">
 
-    <!-- App Title -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sleep Tracker"
+        android:text="Lets Track Your Sleep !!!"
         android:textSize="25sp"
         android:textStyle="bold"
         android:textColor="@android:color/white"
         android:gravity="center"
         android:layout_marginBottom="20dp"/>
 
-    <!-- Sleep Card -->
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,7 +34,6 @@
             android:gravity="center"
             android:padding="10dp">
 
-            <!-- Sleep Status Icon -->
             <ImageView
                 android:id="@+id/sleepIcon"
                 android:layout_width="100dp"
@@ -44,20 +41,18 @@
                 android:src="@drawable/ic_sleep"
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"
-                app:tint="#4CAF50" />
+                app:tint="#FF0000"/>
 
-            <!-- Sleep Time Text -->
             <TextView
                 android:id="@+id/sleepText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="You slept for: 00:00:00"
+                android:text="You Are Sleeping for :- 00:00:00"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 android:textColor="@color/text_color"
                 android:gravity="center"/>
 
-            <!-- Circular Progress Bar -->
             <ProgressBar
                 android:id="@+id/sleepProgress"
                 style="?android:attr/progressBarStyleHorizontal"
