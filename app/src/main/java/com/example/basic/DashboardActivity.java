@@ -32,6 +32,7 @@ public class DashboardActivity extends AppCompatActivity {
 
         drawerLayout = findViewById(R.id.drawerLayout);
         navigationView = findViewById(R.id.nav_view);
+        navigationView.setItemIconTintList(null);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
