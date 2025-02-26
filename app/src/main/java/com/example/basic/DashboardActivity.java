@@ -80,7 +80,9 @@ public class DashboardActivity extends AppCompatActivity {
                     startActivity(new Intent(DashboardActivity.this, WorkoutActivity.class));
                 } else if (id == R.id.nav_bmi) {
                     startActivity(new Intent(DashboardActivity.this, BMI.class));
-                } else if (id == R.id.nav_quiz) {
+                } else if (id == R.id.nav_sleep) {
+                    startActivity(new Intent(DashboardActivity.this, SleepTrackerActivity.class));
+                }else if (id == R.id.nav_quiz) {
                     startActivity(new Intent(DashboardActivity.this, QuizActivity.class));
                 }
                 drawerLayout.closeDrawer(GravityCompat.START);

@@ -41,8 +41,10 @@
         <activity android:name=".WorkoutActivity" />
         <activity android:name=".QuizActivity" />
         <activity android:name=".BMI" />
+        <activity android:name=".SleepTrackerActivity" />
     </application>
 
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />

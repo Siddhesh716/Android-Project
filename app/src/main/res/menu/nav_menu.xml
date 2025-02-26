@@ -28,4 +28,8 @@
         android:id="@+id/nav_bmi"
         android:title="BMI Calculator"
         android:icon="@drawable/ic_bmi"/>
+    <item
+        android:id="@+id/nav_sleep"
+        android:title="Sleep Calculator"
+        android:icon="@drawable/ic_sleep"/>
 </menu>
