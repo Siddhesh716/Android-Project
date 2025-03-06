@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/fit"
         android:supportsRtl="true"
         android:theme="@style/Theme.Basic"
+        android:windowSoftInputMode="adjustResize"
         tools:targetApi="31">
         <activity
             android:name=".MainActivity"
