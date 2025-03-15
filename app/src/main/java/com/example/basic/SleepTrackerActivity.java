@@ -55,7 +55,7 @@ public class SleepTrackerActivity extends AppCompatActivity implements SensorEve
             if (isSleeping) {
                 isSleeping = false;
                 sleepEndTime = System.currentTimeMillis();
-                long sleepDuration = (sleepEndTime - sleepStartTime) / 1000; // Convert to seconds
+                long sleepDuration = (sleepEndTime - sleepStartTime) / 1000;
                 sleepText.setText("You slept for: " + formatTime(sleepDuration));
             }
         }
@@ -79,7 +79,7 @@ public class SleepTrackerActivity extends AppCompatActivity implements SensorEve
                 sleepEndTime = System.currentTimeMillis();
                 screenOff = false;
                 handler.removeCallbacks(updateSleepDuration);
-                long sleepDuration = (sleepEndTime - sleepStartTime) / 1000; // Convert to seconds
+                long sleepDuration = (sleepEndTime - sleepStartTime) / 1000;
                 sleepText.setText("Estimated Sleep: " + formatTime(sleepDuration));
             }
         }
@@ -91,7 +91,7 @@ public class SleepTrackerActivity extends AppCompatActivity implements SensorEve
             if (screenOff) {
                 long sleepDuration = (System.currentTimeMillis() - sleepStartTime) / 1000;
                 sleepText.setText("Sleeping for: " + formatTime(sleepDuration));
-                handler.postDelayed(this, 1000); // Update every second
+                handler.postDelayed(this, 1000);
             }
         }
     };
