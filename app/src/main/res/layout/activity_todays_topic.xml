@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F4F7F6"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    android:paddingTop="20dp">
+
+    <!-- Fixed header -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DISCOVER"
+        android:textColor="#16866A"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:letterSpacing="0.16" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Today's Topic"
+        android:textColor="#172B27"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Fresh ideas for a stronger, healthier you."
+        android:textColor="#6C7C77"
+        android:textSize="14sp" />
+
+    <!-- Fixed search card -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#FFFFFF"
+        android:elevation="3dp"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <EditText
+            android:id="@+id/articleSearchInput"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#F1F5F3"
+            android:hint="Search a topic, e.g. creatine"
+            android:inputType="text"
+            android:imeOptions="actionSearch"
+            android:singleLine="true"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textColor="#20342F"
+            android:textColorHint="#8A9993"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/searchArticlesButton"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#16866A"
+            android:text="Search articles"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/refreshArticlesButton"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="#E7F3EF"
+            android:text="↻  Refresh articles"
+            android:textAllCaps="false"
+            android:textColor="#16866A" />
+
+        <Button
+            android:id="@+id/savedArticlesButton"
+            android:layout_width="match_parent"
+            android:layout_height="46dp"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="#E7F3EF"
+            android:text="☆ Saved Articles"
+            android:textAllCaps="false"
+            android:textColor="#16866A"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <!-- Fixed article heading -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Latest reads"
+        android:textColor="#172B27"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <!-- Fixed article status -->
+    <TextView
+        android:id="@+id/articleStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="#E8EFEC"
+        android:padding="10dp"
+        android:text="Loading articles..."
+        android:textColor="#52645D"
+        android:textSize="13sp" />
+
+    <!-- Only this article list scrolls -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="8dp"
+        android:fillViewport="false"
+        android:clipToPadding="false"
+        android:paddingBottom="12dp">
+
+        <LinearLayout
+            android:id="@+id/articleContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+    </ScrollView>
+
+</LinearLayout>

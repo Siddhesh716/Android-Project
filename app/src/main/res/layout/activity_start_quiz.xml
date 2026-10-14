@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F6F5">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- HEADER -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🎯 START QUIZ"
+                android:textColor="#17201D"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="Adaptive fitness knowledge session"
+                android:textColor="#66716D"
+                android:textSize="14sp" />
+
+            <!-- QUIZ STATUS -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="#FFFFFF"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:id="@+id/quizQuestionNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="QUESTION 1"
+                    android:textColor="#72B832"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.08" />
+
+                <TextView
+                    android:id="@+id/quizDifficultyText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="EASY"
+                    android:textColor="#66716D"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- QUESTION CARD -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="#FFFFFF"
+                android:orientation="vertical"
+                android:padding="22dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="YOUR QUESTION"
+                    android:textColor="#72B832"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.08" />
+
+                <TextView
+                    android:id="@+id/aiQuestionText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="Tap GET QUESTION to begin your fitness quiz."
+                    android:textColor="#17201D"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:lineSpacingExtra="4dp" />
+
+            </LinearLayout>
+
+            <!-- ANSWER OPTIONS -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:text="SELECT YOUR ANSWER"
+                android:textColor="#66716D"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.08" />
+
+            <Button
+                android:id="@+id/optionAButton"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="A"
+                android:textColor="#17201D"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="start|center_vertical"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:elevation="0dp" />
+
+            <Button
+                android:id="@+id/optionBButton"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="B"
+                android:textColor="#17201D"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="start|center_vertical"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:elevation="0dp" />
+
+            <Button
+                android:id="@+id/optionCButton"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="C"
+                android:textColor="#17201D"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="start|center_vertical"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:elevation="0dp" />
+
+            <Button
+                android:id="@+id/optionDButton"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#FFFFFF"
+                android:text="D"
+                android:textColor="#17201D"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:gravity="start|center_vertical"
+                android:paddingStart="18dp"
+                android:paddingEnd="18dp"
+                android:elevation="0dp" />
+
+            <!-- SUBMIT -->
+
+            <Button
+                android:id="@+id/submitAnswerButton"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="18dp"
+                android:backgroundTint="#8CCF45"
+                android:text="SUBMIT ANSWER"
+                android:textColor="#17201D"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.04"
+                android:elevation="0dp" />
+
+            <!-- RESULT -->
+
+            <TextView
+                android:id="@+id/answerResultText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="#EAF6D8"
+                android:padding="18dp"
+                android:text=""
+                android:textColor="#17201D"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <!-- NEXT QUESTION -->
+
+            <Button
+                android:id="@+id/nextQuestionButton"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="#17201D"
+                android:text="GET NEXT QUESTION"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.04"
+                android:visibility="gone"
+                android:elevation="0dp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="24dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

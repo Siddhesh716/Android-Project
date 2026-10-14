@@ -1,71 +1,832 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
-    android:fillViewport="true">
+    android:fillViewport="true"
+    android:background="#F6F8F7">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center">
+        android:padding="20dp">
 
-        <VideoView
-            android:id="@+id/diet_video"
-            android:layout_width="wrap_content"
-            android:layout_height="500dp"
-            android:layout_marginBottom="25dp"/>
+        <!-- HEADER -->
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Eat Less Train More!"
-            android:textSize="24sp"
+            android:text="DIET PLANS"
+            android:textSize="28sp"
             android:textStyle="bold"
-            android:textColor="@android:color/holo_green_dark"
-            android:gravity="center"/>
-
-        <Spinner
-            android:id="@+id/day_spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"/>
+            android:textColor="#17221D" />
 
         <TextView
-            android:id="@+id/diet_plan_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Fuel your body. Train better."
+            android:textSize="15sp"
+            android:textColor="#6B756F" />
+
+
+        <!-- TODAY'S NUTRITION -->
+
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
+            android:layout_marginTop="22dp"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="2dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TODAY'S NUTRITION"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="#718078"
+                    android:letterSpacing="0.08" />
+
+                <TextView
+                    android:id="@+id/nutrition_score_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="0%"
+                    android:textSize="34sp"
+                    android:textStyle="bold"
+                    android:textColor="#198754" />
+
+                <TextView
+                    android:id="@+id/nutrition_status_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="GET STARTED"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="#17221D" />
+
+                <TextView
+                    android:id="@+id/meals_completed_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="0 / 3 meals completed"
+                    android:textSize="14sp"
+                    android:textColor="#6B756F" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- YOUR WEEK -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="YOUR WEEK"
+            android:textSize="13sp"
             android:textStyle="bold"
-            android:textColor="@android:color/holo_blue_dark"
-            android:padding="10dp"
-            android:layout_marginTop="10dp"/>
+            android:textColor="#718078"
+            android:letterSpacing="0.08" />
 
-        <Button
-            android:id="@+id/edit_button"
+        <LinearLayout
+            android:id="@+id/day_selector"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="7">
+
+            <TextView
+                android:id="@+id/day_mon"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginEnd="3dp"
+                android:gravity="center"
+                android:text="MON"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#17221D"
+                android:background="@drawable/day_selector_normal"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/day_tue"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginEnd="3dp"
+                android:gravity="center"
+                android:text="TUE"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#17221D"
+                android:background="@drawable/day_selector_normal"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/day_wed"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginEnd="3dp"
+                android:gravity="center"
+                android:text="WED"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#17221D"
+                android:background="@drawable/day_selector_normal"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/day_thu"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginEnd="3dp"
+                android:gravity="center"
+                android:text="THU"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#17221D"
+                android:background="@drawable/day_selector_normal"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/day_fri"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginEnd="3dp"
+                android:gravity="center"
+                android:text="FRI"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#17221D"
+                android:background="@drawable/day_selector_normal"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/day_sat"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginEnd="3dp"
+                android:gravity="center"
+                android:text="SAT"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#17221D"
+                android:background="@drawable/day_selector_normal"
+                android:clickable="true"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/day_sun"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="SUN"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:textColor="#17221D"
+                android:background="@drawable/day_selector_normal"
+                android:clickable="true"
+                android:focusable="true" />
+
+        </LinearLayout>
+
+
+        <!-- TODAY'S MEALS -->
+
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Edit"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="24dp"
+            android:text="TODAY'S MEALS"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="#718078"
+            android:letterSpacing="0.08" />
 
-        <EditText
-            android:id="@+id/edit_diet_plan"
+
+        <!-- BREAKFAST -->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/breakfast_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Edit your diet plan"
-            android:textSize="18sp"
-            android:background="@android:drawable/editbox_background"
             android:layout_marginTop="10dp"
-            android:visibility="gone"/>
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="1dp"
+            app:cardBackgroundColor="#FFFFFF">
 
-        <Button
-            android:id="@+id/save_diet_plan_button"
-            android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🥣  BREAKFAST"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="#198754"
+                    android:letterSpacing="0.04" />
+
+                <TextView
+                    android:id="@+id/breakfast_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text=""
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#17221D" />
+
+                <TextView
+                    android:id="@+id/breakfast_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="7:30 AM"
+                    android:textSize="13sp"
+                    android:textColor="#7A847E" />
+
+                <Button
+                    android:id="@+id/breakfast_done_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:text="MARK AS EATEN"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#198754" />
+
+                <!-- BREAKFAST NUTRITION -->
+
+                <LinearLayout
+                    android:id="@+id/breakfast_nutrition_panel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:background="#F6F8F7"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NUTRITION"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:textColor="#198754"
+                        android:letterSpacing="0.08" />
+
+                    <TextView
+                        android:id="@+id/breakfast_nutrition_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="#34413A"
+                        android:textSize="14sp"
+                        android:lineSpacingExtra="4dp" />
+
+                    <TextView
+                        android:id="@+id/breakfast_source_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textSize="10sp"
+                        android:textColor="#8A948E" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- LUNCH -->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/lunch_card"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Save Changes"
-            android:layout_marginTop="10dp"
-            android:visibility="gone"/>
+            android:layout_marginTop="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="1dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🍛  LUNCH"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="#D9822B"
+                    android:letterSpacing="0.04" />
+
+                <TextView
+                    android:id="@+id/lunch_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text=""
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#17221D" />
+
+                <TextView
+                    android:id="@+id/lunch_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="1:00 PM"
+                    android:textSize="13sp"
+                    android:textColor="#7A847E" />
+
+                <Button
+                    android:id="@+id/lunch_done_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:text="MARK AS EATEN"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#198754" />
+
+                <LinearLayout
+                    android:id="@+id/lunch_nutrition_panel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:background="#F6F8F7"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NUTRITION"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:textColor="#D9822B"
+                        android:letterSpacing="0.08" />
+
+                    <TextView
+                        android:id="@+id/lunch_nutrition_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="#34413A"
+                        android:textSize="14sp"
+                        android:lineSpacingExtra="4dp" />
+
+                    <TextView
+                        android:id="@+id/lunch_source_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textSize="10sp"
+                        android:textColor="#8A948E" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- DINNER -->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/dinner_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="1dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🍽  DINNER"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="#5B61B6"
+                    android:letterSpacing="0.04" />
+
+                <TextView
+                    android:id="@+id/dinner_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text=""
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#17221D" />
+
+                <TextView
+                    android:id="@+id/dinner_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="8:00 PM"
+                    android:textSize="13sp"
+                    android:textColor="#7A847E" />
+
+                <Button
+                    android:id="@+id/dinner_done_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:text="MARK AS EATEN"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#198754" />
+
+                <LinearLayout
+                    android:id="@+id/dinner_nutrition_panel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:background="#F6F8F7"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NUTRITION"
+                        android:textSize="11sp"
+                        android:textStyle="bold"
+                        android:textColor="#5B61B6"
+                        android:letterSpacing="0.08" />
+
+                    <TextView
+                        android:id="@+id/dinner_nutrition_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="#34413A"
+                        android:textSize="14sp"
+                        android:lineSpacingExtra="4dp" />
+
+                    <TextView
+                        android:id="@+id/dinner_source_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:textSize="10sp"
+                        android:textColor="#8A948E" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- DAILY PROGRESS -->
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="1dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="TODAY'S PROGRESS"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="#718078"
+                        android:letterSpacing="0.06" />
+
+                    <TextView
+                        android:id="@+id/progress_count_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0 / 3"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:textColor="#17221D" />
+
+                </LinearLayout>
+
+                <ProgressBar
+                    android:id="@+id/diet_progress_bar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:layout_marginTop="14dp"
+                    android:max="3"
+                    android:progress="0"
+                    android:progressTint="#198754" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- HYDRATION -->
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="1dp"
+            app:cardBackgroundColor="#FFFFFF">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="💧  HYDRATION"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="#3578A8"
+                    android:letterSpacing="0.05" />
+
+                <TextView
+                    android:id="@+id/water_count_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="1 / 4 L"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#17221D" />
+
+                <ProgressBar
+                    android:id="@+id/water_progress_bar"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:layout_marginTop="12dp"
+                    android:max="16"
+                    android:progress="4"
+                    android:progressTint="#3578A8" />
+
+                <Button
+                    android:id="@+id/add_water_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:text="+  ADD WATER"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:backgroundTint="#3578A8" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- NUTRITION TIP -->
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="18dp"
+            app:cardElevation="1dp"
+            app:cardBackgroundColor="#EEF6F1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="💡  NUTRITION TIP"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="#198754"
+                    android:letterSpacing="0.05" />
+
+                <TextView
+                    android:id="@+id/nutrition_tip_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text="Stay hydrated throughout the day."
+                    android:textSize="15sp"
+                    android:textColor="#34413A"
+                    android:lineSpacingExtra="3dp" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- CUSTOMIZE PLAN -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CUSTOMIZE YOUR PLAN"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#718078"
+                android:letterSpacing="0.08" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Adjust today's meals to match your routine."
+                android:textSize="13sp"
+                android:textColor="#7A847E" />
+
+            <Button
+                android:id="@+id/edit_button"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="14dp"
+                android:text="EDIT TODAY'S PLAN"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#198754" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="#FFFFFF">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="DIET PLAN EDITOR"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:textColor="#17221D"
+                            android:letterSpacing="0.06" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PERSONAL"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:textColor="#198754"
+                            android:background="#EEF6F1"
+                            android:paddingLeft="9dp"
+                            android:paddingRight="9dp"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="7dp"
+                        android:text="Update the meals for the selected day above."
+                        android:textSize="13sp"
+                        android:textColor="#7A847E" />
+
+                    <EditText
+                        android:id="@+id/edit_diet_plan"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_marginTop="14dp"
+                        android:gravity="top|start"
+                        android:hint="🥣 Breakfast: ...&#10;🍛 Lunch: ...&#10;🍽 Dinner: ..."
+                        android:textSize="15sp"
+                        android:textColor="#17221D"
+                        android:textColorHint="#9AA39E"
+                        android:inputType="textMultiLine"
+                        android:padding="14dp"
+                        android:background="@drawable/diet_editor_background"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/save_diet_plan_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:layout_marginTop="14dp"
+                        android:text="SAVE CHANGES"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFF"
+                        android:backgroundTint="#17221D"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="9dp"
+                        android:gravity="center"
+                        android:text="Your changes apply to the selected day."
+                        android:textSize="11sp"
+                        android:textColor="#9AA39E" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
 
     </LinearLayout>
+
 </ScrollView>

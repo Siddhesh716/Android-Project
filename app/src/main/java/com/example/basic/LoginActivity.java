@@ -69,6 +69,12 @@ public class LoginActivity extends AppCompatActivity {
                         editor.putString("USER_WEIGHT", user.getWeight());
                         editor.apply();
 
+                        // Mark the user as logged in.
+                        getSharedPreferences("LoginSession", MODE_PRIVATE)
+                                .edit()
+                                .putBoolean("IS_LOGGED_IN", true)
+                                .apply();
+
                         Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
                         intent.putExtra("USER_NAME", user.getName());
                         startActivity(intent);
